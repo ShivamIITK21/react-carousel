@@ -1,0 +1,29 @@
+.parent{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 14px 125px;
+}
+
+.arrow{
+    position: relative;
+    right: -54px;
+    bottom: 51px;
+}
+
+.outline{
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .parent{
+        margin: 14px 15px;
+        transform: scale(0.8, 0.8);
+    }
+}

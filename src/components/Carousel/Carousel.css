@@ -1,0 +1,11 @@
+.holder{
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+.btn-holder{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
