@@ -5,18 +5,6 @@ import './Carousel.css'
 import RightButton from "./RightBtn";
 import LeftButton from "./LeftBtn";
 
-const createCard = (card) => {
-    return (
-        <Card
-            key={card.id}
-            img={card.img}
-            city={card.city}
-            date={card.date}
-            align={card.align}
-        />
-    )
-}
-
 const Carousel = (props) => {
 
     const [center, setCenter] = React.useState(1);
