@@ -8,6 +8,21 @@ import LeftButton from "./LeftBtn";
 const Carousel = (props) => {
 
     const [center, setCenter] = React.useState(1);
+    const [fade, setFade] = React.useState(1);
+    const [fader, setfader] = React.useState(1);
+    const [fadel, setfade1] = React.useState(1);
+
+    const setFade0 = () => {
+        setFade(0);
+    }
+
+    const setFader0 = () => {
+        setfader(0);
+    }
+
+    const setFade10 = () => {
+        setfade1(0);
+    }
 
     const rightHandler = () => {
         if (center !== carouselData.length - 1) {
@@ -16,6 +31,9 @@ const Carousel = (props) => {
         else {
             setCenter(0)
         }
+        setFade(1);
+        setfader(1);
+        setfade1(1);
     }
 
     const leftHandler = () => {
@@ -25,6 +43,9 @@ const Carousel = (props) => {
         else {
             setCenter(carouselData.length - 1)
         }
+        setFade(1);
+        setfader(1);
+        setfade1(1);
     }
 
     const RenderCards = () => {
@@ -44,6 +65,8 @@ const Carousel = (props) => {
                     city={carouselData[l].city}
                     date={carouselData[l].date}
                     align='left'
+                    anim = {fade ? 'fadel' : ''}
+                    animState = {setFade10}
                 />
                 <Card
                     key={carouselData[center].id}
@@ -51,13 +74,17 @@ const Carousel = (props) => {
                     city={carouselData[center].city}
                     date={carouselData[center].date}
                     align='center'
+                    anim = {fade ? 'fade' : ''}
+                    animState = {setFade0}
                 />
                 <Card
                     key={carouselData[r].id}
                     img={carouselData[r].img}
                     city={carouselData[r].city}
                     date={carouselData[r].date}
-                    align='left'
+                    align='right'
+                    anim = {fader ? 'fader' : ''}
+                    animState = {setFader0}
                 />
             </div>
         )
